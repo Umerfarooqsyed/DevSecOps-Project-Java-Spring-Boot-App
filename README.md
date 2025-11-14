@@ -6,58 +6,20 @@ This project showcases the implementation of **DevSecOps practices** on a Java S
 From **containerization to continuous delivery**, this project was built from scratch, including **pipeline scripting, Dockerization, Kubernetes deployment, ArgoCD GitOps automation**, and **SonarQube code analysis**.
 
 ---
-## 🛠️ Tech Stack
 
-<table>
-  <tr>
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/git" width="48" alt="Git"/><br/>
-      <strong>Git</strong>
-    </td>
+## 🧩 Tech Stack & Tools Used
 
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/github" width="48" alt="GitHub"/><br/>
-      <strong>GitHub</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/jenkins" width="48" alt="Jenkins"/><br/>
-      <strong>Jenkins</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/docker" width="48" alt="Docker"/><br/>
-      <strong>Docker</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/docker" width="48" alt="Docker Hub"/><br/>
-      <strong>Docker Hub</strong>
-    </td>
-  </tr>
-
-  <tr>
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/kubernetes" width="48" alt="Kubernetes"/><br/>
-      <strong>Kubernetes (Kind)</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://raw.githubusercontent.com/cncf/artwork/master/projects/argo/icon/color/argo-icon-color.png" width="48" alt="Argo CD"/><br/>
-      <strong>Argo CD</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/sonarqube" width="48" alt="SonarQube"/><br/>
-      <strong>SonarQube</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
-      <img src="https://cdn.simpleicons.org/groovy" width="48" alt="Groovy"/><br/>
-      <strong>Groovy</strong>
-    </td>
-
-    <td align="center" width="140" valign="middle">
+| Category | Tools / Technologies |
+|-----------|----------------------|
+| **Version Control** | <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="22" align="center"/> **Git** &nbsp;&nbsp; <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="22" align="center"/> **GitHub** |
+| **CI/CD Platform** | <img src="https://img.icons8.com/color/48/jenkins.png" width="22" align="center"/> **Jenkins** |
+| **Containerization** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="25" align="center"/> **Docker** |
+| **Container Registry** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" width="25" align="center"/> **Docker Hub** |
+| **Infrastructure / Orchestration** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/kubernetes/kubernetes-plain.svg" width="25" align="center"/> **Kubernetes (Kind on Azure VM)** |
+| **Deployment Automation** | <img src="https://argo-cd.readthedocs.io/en/stable/assets/argo.png" width="25" align="center"/> **ArgoCD** |
+| **Pipeline Scripting** | <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bash/bash-original.svg" width="25" align="center"/> **Shell Script (Bash)** |
+| **Agent Setup** | <img src="https://img.icons8.com/color/48/azure-1.png" width="22" align="center"/> **Docker Agent on Azure VM** |
+| **Code Security Analysis** | <img src="https://img.icons8.com/?size=512&id=98957&format=png" width="25" align="center"/> **SonarQube** |
 
 
 ---

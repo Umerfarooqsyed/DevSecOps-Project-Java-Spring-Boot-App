@@ -1,7 +1,8 @@
 apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
-  name: spring-boot-app-hpa   
+  name: spring-boot-app-hpa
+  namespace: spring-boot-app
 spec:
   scaleTargetRef:
     apiVersion: apps/v1       

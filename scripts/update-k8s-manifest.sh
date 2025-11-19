@@ -9,12 +9,11 @@ GITHUB_TOKEN=***********
 GIT_USER_NAME=***********
 GIT_USER_EMAIL=***********
 GIT_REPO_NAME=***********
-GIT_REPO_OWNER=***********
 LATEST_IMAGE=***********
 TAG=${BUILD_NUMBER}   # Jenkins automatically provides BUILD_NUMBER
 
 # Define GitHub repo URL using token
-REPO_URL="https://${GITHUB_TOKEN}@github.com/${GIT_REPO_OWNER}/${GIT_REPO_NAME}.git"
+REPO_URL="https://${GITHUB_TOKEN}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git"
 
 # Clone the repository
 git clone "$REPO_URL" /tmp/temp_repo

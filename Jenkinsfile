@@ -7,10 +7,9 @@ pipeline {
     } 
     environment {
         GITHUB_TOKEN= credentials('github-token')
-        GIT_USER_NAME= credentials('')
+        GIT_USER_NAME= "Umerfarooqsyed"
         GIT_USER_EMAIL= "umerfarooqsyed18@gmail.com"
         GIT_REPO_NAME= "DevSecOps-Project-Java-Spring-Boot-App"
-        GIT_REPO_OWNER= "Umerfarooqsyed"
         LATEST_IMAGE= "umerfarooqsyed/java-spring-boot-app:v${BUILD_NUMBER}"
         DOCKER_USER= "umerfarooqsyed"
         DOCKER_PASS= credentials('docker-token')

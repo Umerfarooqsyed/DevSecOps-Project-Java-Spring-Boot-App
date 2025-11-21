@@ -1,6 +1,5 @@
 pipeline {
 
-    // FIRST: FORCE PIPELINE TO RUN ON SLAVE 1
     agent { label 'Slave 1' }
 
     environment {

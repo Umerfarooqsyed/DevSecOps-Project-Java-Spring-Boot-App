@@ -1,6 +1,11 @@
 pipeline {
-
-    agent { label 'Slave 1' }
+    agent {
+        docker {
+            image 'abhishekf5/maven-abhishek-docker-agent:v1'
+            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
+        }
+        label 'Slave 1'
+    }
 
     environment {
         GITHUB_TOKEN= credentials('github-token')
@@ -15,43 +20,41 @@ pipeline {
     }
 
     stages {
-        stage('Docker Agent') {
+        stage('Clean Workspace') {
             steps {
-                script {
-                    docker.image('abhishekf5/maven-abhishek-docker-agent:v1')
-                          .inside('--user root -v /var/run/docker.sock:/var/run/docker.sock') {
+                cleanWs()
+            }
+        }
 
-                        stage('Clean Workspace') {
-                            cleanWs()
-                        }
+        stage('Package into jar file using Maven') {
+            steps {
+                sh 'mvn clean package'
+            }
+        }
 
-                        stage('Package into jar file using Maven') {
-                            sh 'mvn clean package'
-                        }
+        stage('SonarQube Static Code Analysis') {
+            steps {
+                sh 'mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url=$SONAR_URL'
+            }
+        }
 
-                        stage('SonarQube Static Code Analysis') {
-                            sh 'mvn sonar:sonar -Dsonar.login=$SONAR_TOKEN -Dsonar.host.url=${SONAR_URL}'
-                        }
+        stage('Build Docker Image and Push to Dockerhub') {
+            steps {
+                sh '''
+                docker login -u $DOCKER_USER -p $DOCKER_PASS
+                docker build -t ${LATEST_IMAGE} .
+                docker push ${LATEST_IMAGE}
+                echo "Latest docker image pushed to your docker hub account"
+                '''
+            }
+        }
 
-                        stage('Build Docker Image and Push to Dockerhub') {
-                            script {
-                                sh '''
-                                docker login -u $DOCKER_USER -p $DOCKER_PASS
-                                docker build -t ${LATEST_IMAGE} .
-                                docker push ${LATEST_IMAGE}
-                                echo "Latest docker image pushed to your docker hub account"
-                                '''
-                            }
-                        }
-
-                        stage('Update k8s manifest file') {
-                            sh '''
-                            chmod +x /scripts/update-k8s-manifest.sh
-                            ./update-k8s-manifest.sh
-                            '''
-                        }
-                    } 
-                }
+        stage('Update k8s manifest file') {
+            steps {
+                sh '''
+                chmod +x /scripts/update-k8s-manifest.sh
+                ./update-k8s-manifest.sh
+                '''
             }
         }
     }

@@ -4,7 +4,7 @@ pipeline {
             image 'abhishekf5/maven-abhishek-docker-agent:v1'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
-        label 'Slave 1'
+        label 'myagent'
     }
 
     environment {
@@ -16,7 +16,7 @@ pipeline {
         DOCKER_USER= "umerfarooqsyed"
         DOCKER_PASS= credentials('docker-token')
         SONAR_TOKEN= credentials('sonar-token')
-        SONAR_URL= "http://34.201.116.83:9000"
+        SONAR_URL= "http://192.168.100.10:9000"
     }
 
     stages {

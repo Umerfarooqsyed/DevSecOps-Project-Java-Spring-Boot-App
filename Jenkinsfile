@@ -4,9 +4,7 @@ pipeline {
             image 'abhishekf5/maven-abhishek-docker-agent:v1'
             args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
         }
-        label 'myagent'
     }
-
     environment {
         GITHUB_TOKEN= credentials('github-token')
         GIT_USER_NAME= "Umerfarooqsyed"
